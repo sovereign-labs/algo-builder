@@ -1,0 +1,180 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@algo-builder/web</title>
+	<meta name="description" content="Documentation for @algo-builder/web">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@algo-builder/web</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>@algo-builder/web</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#algo-builderweb" id="algo-builderweb" style="color: inherit; text-decoration: none;">
+					<h1>@algo-builder/web</h1>
+				</a>
+				<p><code>@algo-builder/web</code> package allows you to interact with contracts easily. It is designed to be used with web dapps as well as scripts and user programs.</p>
+				<p>This package provides a class <code>WebMode</code> which has variety of high level functions like, <a href="algobuilder.dev/api/web/classes/web.html#waitForConfirmation"><code>waitForConfirmation</code></a>, <a href="(algobuilder.dev/api/web/classes/web.html#executeTransaction)"><code>executeTransaction</code></a>, <a href="(algobuilder.dev/api/web/classes/web.html#signTransaction)"><code>signTransaction</code></a>, etc. These functions help sending transactions and building dapps.</p>
+				<a href="#relation-to-algob" id="relation-to-algob" style="color: inherit; text-decoration: none;">
+					<h3>Relation to algob</h3>
+				</a>
+				<p><code>algob</code> uses <code>@algo-builder/web</code> package. However It is not possible to use <code>algob</code> directly in a web app, because <code>algob</code> uses nodejs file system. Therefore we created a lightweight <code>@algo-builder/web</code> package to provide common functionality and support dapp development.</p>
+				<p>In the <code>@algo-builder/web</code> package we pass transaction <a href="https://github.com/scale-it/algo-builder/blob/master/docs/guide/execute-transaction.md">parameters</a> in the same way as we do in <code>algob</code>.</p>
+				<a href="#important-links" id="important-links" style="color: inherit; text-decoration: none;">
+					<h2>Important links</h2>
+				</a>
+				<ul>
+					<li><a href="https://scale-it.github.io/algo-builder">Home Page</a></li>
+					<li><a href="https://scale-it.github.io/algo-builder/api/web/index.html">Web API Docs</a></li>
+					<li><a href="https://scale-it.github.io/algo-builder/guide/README">User Docs</a></li>
+				</ul>
+				<a href="#using-web" id="using-web" style="color: inherit; text-decoration: none;">
+					<h2>Using Web</h2>
+				</a>
+				<p><code>@algo-builder/web</code> can be included as a library using <code>yarn add @algo-builder/web</code> and then import it using <code>import * from &#39;@algo-builder/web&#39;</code>.</p>
+				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+					<h3>Example</h3>
+				</a>
+				<p>To use <code>web</code> package in your react app, first you need to create an instance of the <code>WebMode</code> class by passing <code>AlgoSigner</code> and the chain name.</p>
+				<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">web</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">WebMode</span><span style="color: #000000">(</span><span style="color: #001080">AlgoSigner</span><span style="color: #000000">, </span><span style="color: #0070C1">CHAIN_NAME</span><span style="color: #000000">);</span>
+</code></pre>
+				<p>Now you can use it to execute a transaction:</p>
+				<pre><code><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">txParams</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">type:</span><span style="color: #000000"> </span><span style="color: #001080">types</span><span style="color: #000000">.</span><span style="color: #001080">TransactionType</span><span style="color: #000000">.</span><span style="color: #001080">TransferAlgo</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">sign:</span><span style="color: #000000"> </span><span style="color: #001080">types</span><span style="color: #000000">.</span><span style="color: #001080">SignType</span><span style="color: #000000">.</span><span style="color: #001080">SecretKey</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">fromAccountAddr:</span><span style="color: #000000"> </span><span style="color: #001080">fromAddress</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">toAccountAddr:</span><span style="color: #000000"> </span><span style="color: #001080">toAddress</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">amountMicroAlgos:</span><span style="color: #000000"> </span><span style="color: #001080">amount</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">payFlags:</span><span style="color: #000000"> {},</span>
+<span style="color: #000000">};</span>
+<span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">response</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">web</span><span style="color: #000000">.</span><span style="color: #795E26">executeTransaction</span><span style="color: #000000">(</span><span style="color: #001080">txParams</span><span style="color: #000000">);</span>
+</code></pre>
+				<p>This code will make the transaction, let the user sign it using algosigner and send it to the network.</p>
+				<p>You can also use <code>web.sendTransaction()</code> or <code>web.signTransaction()</code> in a react app.</p>
+				<p><strong>Note:</strong> We don&#39;t support checkpoints yet. Currently <code>deployASA</code>, <code>deploySSC</code> functions don&#39;t work. User should directly pass assetIndex, appIndex instead of asaName, appName.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/parsing.html">parsing</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/tx.html">tx</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/types.html">types</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/buildererror.html" class="tsd-kind-icon">Builder<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/webmode.html" class="tsd-kind-icon">Web<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/errordescriptor.html" class="tsd-kind-icon">Error<wbr>Descriptor</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#asadefschema" class="tsd-kind-icon">ASADef<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#asadefsschema" class="tsd-kind-icon">ASADefs<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#errors" class="tsd-kind-icon">ERRORS</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="modules.html#error_ranges" class="tsd-kind-icon">ERROR_<wbr>RANGES</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#applyerrormessagetemplate" class="tsd-kind-icon">apply<wbr>Error<wbr>Message<wbr>Template</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#parsealgoranderror" class="tsd-kind-icon">parse<wbr>Algorand<wbr>Error</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
